@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-	cout << "!!!Ciro ce l'ho fatta!!!" << endl; // prints !!!Hello World!!!
-	cout<<"Boh"<<endl;
-	return 0;
+
+	float delta[6]={0.1, 0.2, 0.3, 0.2, 0.1, 0.1};
+
 }
