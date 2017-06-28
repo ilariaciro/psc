@@ -7,6 +7,11 @@
 //============================================================================
 
 #include "Traj.h"
+#include "Traj_emxAPI.h"
+#include "Traj_emxutil.h"
+#include "Traj_initialize.h"
+#include "Traj_terminate.h"
+#include "Traj_types.h"
 #include <iostream>
 using namespace std;
 
@@ -22,9 +27,10 @@ int main() {
 	emxArray_real_T *xd=NULL;
 	emxArray_real_T *dxd=NULL;
 	emxArray_real_T *ddxd=NULL;
+
 	cout<<"\n"<<"Pen1"<<endl;
 	Traj(T, tf, tStop, p_i, p_f, phi_i, phi_f, xd, dxd, ddxd);
 	cout<<"\n"<<"Pen"<<endl;
-	cout<<"\n"<<xd->size<<endl;
+	cout<<"\n"<<"QUI"<<endl;
 	return 0;
 }
