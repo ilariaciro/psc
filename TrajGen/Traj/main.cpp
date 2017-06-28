@@ -57,10 +57,8 @@ static void main_Traj()
 	emxArray_real_T *xd;
 	emxArray_real_T *dxd;
 	emxArray_real_T *ddxd;
-	double dv0[3];
-	double dv1[3];
-	double dv2[3];
-	double dv3[3];
+
+
 	emxInitArray_real_T(&xd, 2);
 	emxInitArray_real_T(&dxd, 2);
 	emxInitArray_real_T(&ddxd, 2);
@@ -77,11 +75,12 @@ static void main_Traj()
 	Traj(T, tf, tStop, p_i, p_f, phi_i, phi_f, xd, dxd, ddxd);
 
 	cout<<"P3"<<endl;
-	for(int i=0; i<xd->size[1]; i++){
+	for(int j=600; j<100*xd->size[0]+6; j++ ){
+		//for(int i=0; i<xd->size[1]; i++){
 
-	cout<<xd->data[i]<<endl;
+			cout<<xd->data[j]<<"  ";
+		//}
 	}
-
 	emxDestroyArray_real_T(ddxd);
 	emxDestroyArray_real_T(dxd);
 	emxDestroyArray_real_T(xd);
