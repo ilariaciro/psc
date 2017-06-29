@@ -79,7 +79,9 @@ int main(int, const char * const [])
 	const double p_f[3]={-0.0000, 3.3476, 1.0129};
 	const double phi_i[3]={1.5708,-2.7053,0.0000};
 	const double phi_f[3]={1.5708,-1.6581,0.0000};
-
+/******************************************************************************************************/
+	const double q[6]={1.5708, -2.4435, 0.6981, 0, 1.3090,  0};
+	const double dq[6]={0,0,0,0,0,0};
 
 	cout<<"\n"<<"GENERAZIONE TRAIETTORIA"<<endl;
 	Traj(T, tf, tStop, p_i, p_f, phi_i, phi_f, xd, dxd, ddxd);
@@ -102,6 +104,9 @@ int main(int, const char * const [])
 			cout<<" "<<matTraj[j][i]<<" ";
 		cout<<endl;
 	}
+
+//	const double xd[6], const double dxd[6], double T, const char str[3], double K,
+//		  double qf[6], double dqf_data[], int dqf_size[1]
 
 
 	emxDestroyArray_real_T(ddxd);
