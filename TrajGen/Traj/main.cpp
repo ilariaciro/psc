@@ -5,7 +5,10 @@
 #include "Traj_terminate.h"
 #include "Traj_emxAPI.h"
 #include "Traj_initialize.h"
+#include "Click1PseudoinversaSamplesCpp.h"
 #include "main.h"
+#include "Click1PseudoinversaSamplesCpp_terminate.h"
+#include "Click1PseudoinversaSamplesCpp_initialize.h"
 
 #include <stdio.h>
 #include <iostream>
@@ -86,32 +89,80 @@ int main(int, const char * const [])
 	// COSTRUZIONE MATRICE TRAIETTORIA
 	int row=xd->size[0];
 	int col=xd->size[1];
-	double matTraj[row][col];
+	double matxd[row][col];
+	double matdxd[row][col];
 
 	int index=0;
 	for(int c=0; c<col; c++)
 		for(int r=0; r<row; r++){
-			matTraj[r][c]=xd->data[index];
+			matxd[r][c]=xd->data[index];
+			matdxd[r][c]=dxd->data[index];
 			index++;
 		}
 
+	/*	cout<<"Traiettoria"<<endl;
 	// STAMPA MATRICE TRAIETTORIA...
 	for(int i=0; i<col; i++){
 		cout<<"COLONNA: "<<i<<"";
 		for(int j=0; j<row; j++)
-			cout<<" "<<matTraj[j][i]<<" ";
+			cout<<" "<<matxd[j][i]<<" ";
 		cout<<endl;
 	}
 
+	cout<<"Velocità"<<endl;
+	// STAMPA MATRICE TRAIETTORIA...
+	for(int i=0; i<col; i++){
+		cout<<"COLONNA: "<<i<<"";
+		for(int j=0; j<row; j++)
+			cout<<" "<<matdxd[j][i]<<" ";
+		cout<<endl;
+	}*/
+
 	/********************************* INVERSIONE *********************************************************************/
-	double q[row][col];
-	//q={1.5708, -2.4435, 0.6981, 0, 1.3090,  0};
-	double dq[6]={0,0,0,0,0,0};
+	double matq[row][col];
+	double matdq[row][col];
+	double temp[6]={1.5708, -2.4435, 0.6981, 0, 1.3090,  0};
+	int dqf_size[1];
+	double dqf[row];
+	double qf[row];
 	const char str[3]={'Z','Y','Z'};
 	double K=100;
 
+	/****Vettori temporanei****/
+	double qtemp[row];
+	double dqtemp[row];
+	double xdtemp[row];
+	double dxdtemp[row];
 
-	//		  double qf[6], double dqf_data[], int dqf_size[1]
+	for(int i=0; i<row; i++){
+		matq[i][0]=temp[i];
+		matdq[i][0]=0;
+	}
+
+	for(int k=1; k<col; k++){
+
+		for(int i=0; i<row; i++){
+			qtemp[i]=matq[i][k-1];
+			dqtemp[i]=matdq[i][k-1];
+			xdtemp[i]=matxd[i][k-1];
+			dxdtemp[i]=matdxd[i][k-1];
+		}
+		Click1PseudoinversaSamplesCpp(qtemp, dqtemp, xdtemp, dxdtemp, T, str, K, qf, dqf, dqf_size);
+		for(int i=0; i<row; i++){
+			matq[i][k]=qf[i];
+			matdq[i][k]=dqf[i];
+		}
+
+	}
+	cout<<"Inversione"<<endl;
+		// STAMPA MATRICE TRAIETTORIA...
+		for(int i=0; i<col; i++){
+			cout<<"COLONNA: "<<i<<"";
+			for(int j=0; j<row; j++)
+				cout<<" "<<matq[j][i]<<" ";
+			cout<<endl;
+		}
+
 
 
 	emxDestroyArray_real_T(ddxd);
