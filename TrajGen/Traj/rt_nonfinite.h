@@ -1,8 +1,11 @@
 /*
+ * Academic License - for use in teaching, academic research, and meeting
+ * course requirements at degree granting institutions only.  Not for
+ * government, commercial, or other organizational use.
  * File: rt_nonfinite.h
  *
  * MATLAB Coder version            : 3.0
- * C/C++ source code generated on  : 28-Jun-2017 17:39:02
+ * C/C++ source code generated on  : 29-Jun-2017 11:10:26
  */
 
 #ifndef __RT_NONFINITE_H__

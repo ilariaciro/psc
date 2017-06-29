@@ -59,8 +59,8 @@ using namespace std;
 int main(int, const char * const [])
 {
 	// Initialize the application.
-	// You do not need to do this more than one time.
 	// Traj_initialize();
+	//Click1PseudoinversaSamplesCpp_initialize();
 
 	// Invoke the entry-point functions.
 	// You can call entry-point functions multiple times.
@@ -103,14 +103,16 @@ int main(int, const char * const [])
 		cout<<endl;
 	}
 
+
 	emxDestroyArray_real_T(ddxd);
 	emxDestroyArray_real_T(dxd);
 	emxDestroyArray_real_T(xd);
 
 	// Terminate the application.
-	// You do not need to do this more than one time.
-
 	//Traj_terminate();
+	//Click1PseudoinversaSamplesCpp_terminate();
+
+
 
 	return 0;
 }
