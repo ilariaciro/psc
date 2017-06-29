@@ -1,12 +1,11 @@
 // Include Files
-/*#include "rt_nonfinite.h"
+#include "rt_nonfinite.h"
 #include "Traj.h"
 #include "main.h"
 #include "Traj_terminate.h"
 #include "Traj_emxAPI.h"
 #include "Traj_initialize.h"
 #include "Click1PseudoinversaSamplesCpp.h"
-#include "main.h"
 #include "Click1PseudoinversaSamplesCpp_terminate.h"
 #include "Click1PseudoinversaSamplesCpp_initialize.h"
 
@@ -45,8 +44,8 @@
 /*static double argInit_real_T()
 {
   return 0.0;
-}
- */
+}*/
+
 
 
 
@@ -57,8 +56,8 @@
 //
 
 //void printMatrixTraj(double matTraj[][], int row, int col);
-
-#include "comau.h"
+/*
+#include "comau.h"*/
 #include <stdio.h>
 #include <iostream>
 using namespace std;
@@ -168,11 +167,11 @@ int main(int, const char * const [])
 		}
 
 
-
+	/*
 	emxDestroyArray_real_T(ddxd);
 	emxDestroyArray_real_T(dxd);
 	emxDestroyArray_real_T(xd);
-
+	*/
 	// Terminate the application.
 	//Traj_terminate();
 	//Click1PseudoinversaSamplesCpp_terminate();
