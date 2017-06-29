@@ -42,7 +42,7 @@
 // Arguments    : void
 // Return Type  : double
 //
-/*static double argInit_real_T()
+static double argInit_real_T()
 {
   return 0.0;
 }
@@ -58,9 +58,10 @@
 
 //void printMatrixTraj(double matTraj[][], int row, int col);
 
-#include "comau.h"
 #include <stdio.h>
 #include <iostream>
+
+#include "comauFunction.h"
 using namespace std;
 
 int main(int, const char * const [])
@@ -176,8 +177,6 @@ int main(int, const char * const [])
 	// Terminate the application.
 	//Traj_terminate();
 	//Click1PseudoinversaSamplesCpp_terminate();
-
-
 
 	return 0;
 }
