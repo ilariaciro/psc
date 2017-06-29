@@ -118,8 +118,8 @@ int main(int, const char * const [])
 /*void printMatrixTraj(double matTraj[][], int row, int col){
   for(int i=0; i<col; i++){
       for(int j=0; j<row; j++)
-        cout«" "«matTraj[j][i]«" ";
-      cout«endl;
+        cout<<" "<<matTraj[j][i]<<" ";
+      cout<<endl;
     }
 }
  */
