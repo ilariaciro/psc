@@ -1,4 +1,3 @@
-
 // Include Files
 #include "rt_nonfinite.h"
 #include "Traj.h"
