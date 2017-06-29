@@ -98,6 +98,7 @@ int main(int, const char * const [])
 
 	// STAMPA MATRICE TRAIETTORIA...
 	for(int i=0; i<col; i++){
+		cout<<"COLONNA: "<<i<<"";
 		for(int j=0; j<row; j++)
 			cout<<" "<<matTraj[j][i]<<" ";
 		cout<<endl;
