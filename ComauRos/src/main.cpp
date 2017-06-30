@@ -61,7 +61,7 @@ static double argInit_real_T()
 #include <stdio.h>
 #include <iostream>
 
-#include "comauFunction.h"
+#include "comauHeader.h"
 using namespace std;
 
 int main(int, const char * const [])

@@ -1,4 +1,10 @@
 #include "comauHeader.h"
+real_T rtInf;
+real_T rtMinusInf;
+real_T rtNaN;
+real32_T rtInfF;
+real32_T rtMinusInfF;
+real32_T rtNaNF;
 
 // IMPLEMENTAZIONE METODI
 void AscissaCurvilineaOrientamento2(double T, const double phii[3], const double
@@ -592,7 +598,7 @@ void Click1PseudoinversaSamplesCpp_terminate()
 	// (no terminate code required)
 }
 
-static double rt_roundd_snf(double u)
+double rt_roundd_snf(double u)
 {
 	double y;
 	if (fabs(u) < 4.503599627370496E+15) {
@@ -1219,7 +1225,7 @@ void JacobianoGeometricoCpp(const double p[3], const double A[144], double Jg[36
 	}
 }
 
-static double rt_atan2d_snf(double u0, double u1)
+double rt_atan2d_snf(double u0, double u1)
 {
 	double y;
 	int b_u0;
