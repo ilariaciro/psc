@@ -153,20 +153,21 @@ int main(int, const char * const [])
 			dxdtemp[i]=matdxd[i][k-1];
 		}
 		Click1PseudoinversaSamplesCpp(qtemp, dqtemp, xdtemp, dxdtemp, T, str, K, qf, dqf, dqf_size);
+		cout<<"DQFSIZE: "<<qf_size[]<<endl;
 		for(int i=0; i<row; i++){
 			matq[i][k]=qf[i];
 			matdq[i][k]=dqf[i];
 		}
 
 	}
-	cout<<"Inversione"<<endl;
-		// STAMPA MATRICE TRAIETTORIA...
-		for(int i=0; i<col; i++){
-			cout<<"COLONNA: "<<i<<"";
-			for(int j=0; j<row; j++)
-				cout<<" "<<matq[j][i]<<" ";
-			cout<<endl;
-		}
+//	cout<<"Inversione"<<endl;
+//		// STAMPA MATRICE TRAIETTORIA...
+//		for(int i=0; i<col; i++){
+//			cout<<"COLONNA: "<<i<<"";
+//			for(int j=0; j<row; j++)
+//				cout<<" "<<matq[j][i]<<" ";
+//			cout<<endl;
+//		}
 
 
 
