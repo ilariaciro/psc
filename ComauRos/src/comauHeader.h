@@ -50,12 +50,12 @@ typedef unsigned long long ulonglong_T;
 typedef char char_T;
 typedef char_T byte_T;
 
-real_T rtInf;
-real_T rtMinusInf;
-real_T rtNaN;
-real32_T rtInfF;
-real32_T rtMinusInfF;
-real32_T rtNaNF;
+//real_T rtInf;
+//real_T rtMinusInf;
+//real_T rtNaN;
+//real32_T rtInfF;
+//real32_T rtMinusInfF;
+//real32_T rtNaNF;
 
 #if defined(_MSC_VER) && (_MSC_VER <= 1200)
 #include <float.h>
@@ -186,13 +186,13 @@ void AscissaCurvilineaTraiettoria2(double T, const double qi[3], const double
 		*ddps);
 void Click1PseudoinversaSamplesCpp_initialize();
 void Click1PseudoinversaSamplesCpp_terminate();
-static double rt_roundd_snf(double u);
+double rt_roundd_snf(double u);
 void Click1PseudoinversaSamplesCpp(const double q[6], const double dq[6], const
 		double xd[6], const double dxd[6], double T, const char str[3], double K,
 		double qf[6], double dqf_data[], int dqf_size[1]);
 void invNxN(const double x[36], double y[36]);
 void JacobianoGeometricoCpp(const double p[3], const double A[144], double Jg[36]);
-static double rt_atan2d_snf(double u0, double u1);
+double rt_atan2d_snf(double u0, double u1);
 void kCpp(const double q[6], const char str[3], double p[3], double phi_data[],
 		int phi_size[2], double R[9], double A[144]);
 double norm(const double x[3]);
